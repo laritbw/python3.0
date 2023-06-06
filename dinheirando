@@ -1,0 +1,191 @@
+print('''Olá! Você está no programa dinheirando!
+Eu sou a Dina! Aqui eu te ajudo a organizar suas finanças mensais.''')
+print('Qual é o seu nome?')
+nome = str(input()).strip()
+print(f'Muito prazer, {nome}!')
+print('''De qual mês vamos fazer o registro?
+Digite o nome por extenso. Ex: Junho''')
+mes = str(input()).strip()
+print('Tudo certo para começar!')
+print('Quando quiser iniciar, aperte a tecla Enter.')
+input()
+print(f'Ótimo, {nome}! Vamos lá!')
+#registrar os recebimentos
+print('''
+*** Vamos começar registrando seus recebimentos! ***''')
+print('------ Primeiro Valor Recebido do Mês ------')
+pr = float(input('Digite o valor recebido: R$'))
+input('Dê um nome para esse recebimento: ')
+resposta = int(input('Digite [1] para adicionar outro recebimento ou [0] para continuar: '))
+if resposta == 1:
+    print('------ Segundo Valor Recebido do Mês ------')
+    sr = float(input('Digite o valor recebido: R$'))
+    input('Dê um nome para esse recebimento: ')
+    resposta2 = int(input('Digite [1] para adicionar outro recebimento ou [0] para continuar: '))
+    if resposta2 == 1:
+        print('------ Terceiro Valor Recebido do Mês ------')
+        tr = float(input('Digite o valor recebido: R$'))
+        input('Dê um nome para esse recebimento: ')
+        print('Pronto! Você digitou todos os seus recebimentos.')
+    else:
+        print('Pronto! Você digitou todos os seus recebimentos.')
+else:
+    print('Pronto! Você digitou todos os seus recebimentos.')
+#cartão de crédito
+print('''
+*** Informações de gastos em cartão de crédito ***''')
+cartao = str(input('Você possui cartão de crédito? Digite [Sim] ou [Não]: ')).upper().strip()
+if 'S' in cartao:
+    tf = str(input('Você possui gastos fixos no cartão? Digite [Sim] ou [Não]: ')).upper().strip()
+    if 'S' in tf:
+        limite = float(input('Informe o limite do seu cartão: R$'))
+        print('Tudo certo! Vamos registrar esses gastos fixos!')
+        print('------ Gasto Fixo 1 -------')
+        fx = float(input('Digite o valor do primeiro gasto: R$'))
+        input('Dê um nome para esse gasto: ')
+        respostafx = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+        if respostafx == 1:
+            print('------ Gasto Fixo 2 -------')
+            fx2 = float(input('Digite o valor do segundo gasto: R$'))
+            input('Dê um nome para esse gasto: ')
+            respostafx2 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+            if respostafx2 == 1:
+                print('------ Gasto Fixo 3 -------')
+                fx3 = float(input('Digite o valor do terceiro gasto: R$'))
+                input('Dê um nome para esse gasto: ')
+                respostafx3 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+                if respostafx3 == 1:
+                    print('------ Gasto Fixo 4 -------')
+                    fx4 = float(input('Digite o valor do quarto gasto: R$'))
+                    input('Dê um nome para esse gasto: ')
+                    respostafx4 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+                    if respostafx4 == 1:
+                        print('------ Gasto Fixo 5 -------')
+                        fx5 = float(input('Digite o valor do quinto gasto: R$'))
+                        input('Dê um nome para esse gasto: ')
+                    else:
+                        print('Você acabou de registrar seus gastos fixos!')
+                else:
+                    print('Você acabou de registrar seus gastos fixos!')
+            else:
+                print('Você acabou de registrar seus gastos fixos!')
+        else:
+            print('Você acabou de registrar seus gastos fixos!')
+    else:
+        print('Melhor ainda! Cartão livre para uso integral. Vamos prosseguir!')
+else:
+    print('Certo! Vamos continuar sem adicionar os recursos para cartões.')
+#registrar as despesas
+print('''
+*** Agora vamos registrar suas despesas ***''')
+print('''
+------ Primeira Despesa do Mês ------''')
+pd = float(input('Digite o valor da despesa: R$'))
+input('Dê um nome para essa despesa: ')
+respostadp = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+if respostadp == 1:
+    print('------ Segunda Despesa do Mês ------')
+    sd = float(input('Digite o valor da despesa: R$'))
+    input('Dê um nome para essa despesa: ')
+    respostadp2 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+    if respostadp2 == 1:
+        print('------ Terceira Despesa do Mês ------')
+        trd = float(input('Digite o valor da despesa: R$'))
+        input('Dê um nome para essa despesa: ')
+        respostadp3 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+        if respostadp3 == 1:
+            print('------ Quarta Despesa do Mês ------')
+            qd = float(input('Digite o valor da despesa: R$'))
+            input('Dê um nome para essa despesa: ')
+            respostadp4 = int(input('Digite [1] para adicionar outra despesa ou [0] para continuar: '))
+            if respostadp4 == 1:
+                print('------ Quinta Despesa do Mês ------')
+                quintad = float(input('Digite o valor da despesa: R$'))
+                input('Dê um nome para essa despesa: ')
+                print('Pronto! Você registrou todas as suas despesas!')
+            else:
+                print('Pronto! Você registrou todas as suas despesas!')
+        else:
+            print('Pronto! Você registrou todas as suas despesas!')
+    else:
+        print('Pronto! Você registrou todas as suas despesas!')
+else:
+    print('Pronto! Você registrou todas as suas despesas!')
+#somar recebimentos
+if resposta == 0:
+    recebetot = pr
+elif resposta == 1 and resposta2 == 0:
+    recebetot = pr + sr
+elif resposta == 1 and resposta2 == 1:
+    recebetot = pr + sr + tr
+#somar as despesas
+if respostadp == 0:
+    despesatot = pd
+elif respostadp == 1 and respostadp2 == 0:
+    despesatot = pd + sd
+elif respostadp == 1 and respostadp2 == 1 and respostadp3 == 0:
+    despesatot = pd + sd + trd
+elif respostadp == 1 and respostadp2 == 1 and respostadp3 == 1 and respostadp4 == 0:
+    despesatot = pd + sd + trd + qd
+elif respostadp == 1 and respostadp2 == 1 and respostadp3 == 1 and respostadp4 == 1:
+    despesatot = pd + sd + trd + qd + quintad
+#somar fixos do cartão de crédito
+if 'S' in cartao and 'S' in tf:
+    if respostafx == 0:
+        fixotot = fx
+    elif respostafx == 1 and respostafx2 == 0:
+        fixotot = fx + fx2
+    elif respostafx == 1 and respostafx2 == 1 and respostafx3 == 0:
+        fixotot = fx + fx2 + fx3
+    elif respostafx == 1 and respostafx2 == 1 and respostafx3 == 1 and respostafx4 == 0:
+        fixotot = fx + fx2 + fx3 + fx4
+    elif respostafx == 1 and respostafx2 == 1 and respostafx3 == 1 and respostafx4 == 1:
+        fixotot = fx + fx2 + fx3 + fx4 + fx5
+#calcular limite restante
+if 'S' in cartao and 'S' in tf:
+    lr = limite - fixotot
+#somar despesas com os fixos
+if 'S' in cartao and 'S' in tf:
+    sdf = fixotot + despesatot
+#subtrair tudo dos recebimentos
+if 'S' in cartao and 'S' in tf:
+    resto = recebetot - sdf
+else:
+    resto = recebetot - despesatot
+#simular a sobra ideal
+sobraideal = 0.20 * recebetot
+print(f'''
+*** Seu diagnóstico de {mes} está pronto, {nome}! ***''')
+print('''
+Você recebeu R${} esse mês.'''.format(recebetot))
+if 'S' in cartao and 'S' in tf:
+    print('''
+Você gastou um total de R${} no cartão de crédito.
+Você tem R${} sobrando do seu limite total.'''.format(fixotot, lr))
+    print('''
+Seu total de gastos, contando com a fatura atual do cartão é de R${}.
+'''.format(sdf))
+    print('Você ficou com uma sobra de R${}'.format(resto))
+else:
+    print('''
+Seu total de gastos foi de R${}
+'''.format(despesatot))
+    print('Você ficou com uma sobra de R${}'.format(resto))
+if resto < 0:
+    print('''{}! Você vai sair do mês no negativo! Cuidado! Isso é muito perigoso! Tente diminuir seus gastos!
+O ideal é que sobre ao menos 20% do valor recebido.
+No seu caso, esse valor seria R${}'''.format(nome, sobraideal))
+elif resto < sobraideal:
+    print('''{}, você teve uma sobra muito baixa para o valor que recebeu, tente diminuir suas despesas!
+O ideal é que sobre ao menos 20% do valor recebido.
+No seu caso, esse valor seria R${}'''.format(nome, sobraideal))
+else:
+    print(f'''{nome}, parabéns! O valor da sobra foi proporcional aos seus recebimentos, continue assim!
+O ideal é que sobre ao menos 20% do que você recebeu. Você conseguiu!''')
+print('''
+Vou te dar um tempo para tirar print ou foto do seu resultado. 
+Quando quiser prosseguir aperte a tecla Enter.''')
+input()
+print('''
+O programa encerra por aqui, muito obrigada por me escolher para te auxiliar.
+Espero ter ajudado, {}! Volte mais vezes, será um prazer!'''.format(nome))
