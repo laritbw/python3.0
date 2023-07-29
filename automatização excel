@@ -1,0 +1,16 @@
+from openpyxl import Workbook
+
+arquivo = Workbook()
+
+plan0 = arquivo.active
+
+plan0.title = 'Contatos'
+
+pagcont = plan0
+pagcont.append(['Nome', 'Número', 'Valor disponível'])
+pagcont.append(['Mário', '(82) 98867-9876', 'R$8000'])
+pagcont.append(['Ana', '(82) 98867-9876', 'R$10000'])
+pagcont.append(['Maria', '(82) 98867-9876', 'R$60000'])
+pagcont.append(['Jânia', '(82) 98867-9876', 'R$7000'])
+
+arquivo.save('contatos.xlsx')
