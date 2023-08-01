@@ -1,0 +1,17 @@
+#fazer importações
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import pandas as pd
+
+arquivo = 'teste.xlsx'
+df = pd.read_excel(arquivo)
+
+url_do_consig = 'https://consignacao.seplag.al.gov.br/'
+
+for index, row in df.iterrows():
+    print('Index: ' + str(index) + ' E o nome da bestona é' + row['NOME'])
+    chrome = webdriver.Chrome(url_do_consig)
+    chrome.get(url_do_consig)
+    chrome.quit
