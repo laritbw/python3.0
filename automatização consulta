@@ -1,17 +1,21 @@
-#fazer importações
+#importar bibliotecas
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+import time 
 import pandas as pd
 
-arquivo = 'teste.xlsx'
-df = pd.read_excel(arquivo)
+#ler arquivo do excel
 
-url_do_consig = 'https://consignacao.seplag.al.gov.br/'
+planilha = pd.read_excel('insta.xlsx')
 
-for index, row in df.iterrows():
-    print('Index: ' + str(index) + ' E o nome da bestona é' + row['NOME'])
-    chrome = webdriver.Chrome(url_do_consig)
-    chrome.get(url_do_consig)
-    chrome.quit
+for i, login in enumerate(planilha["LOGIN"]):
+    senha = planilha.loc[i, "SENHA"]
+    navegador = webdriver.Chrome()
+    navegador.get("https://www.instagram.com/")
+    time.sleep(2)
+    navegador.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[1]/div/label/input').send_keys(login)
+    navegador.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[2]/div/label/input').send_keys(senha)
+    navegador.find_element(By.XPATH, '//*[@id="loginForm"]/div/div[3]').click()
+    time.sleep(6)
